@@ -1,5 +1,5 @@
 import numpy as np
-
+import json
 
 class ImageUtils:
     def __init__(self, borders: () = None):
@@ -63,4 +63,5 @@ class PredictionsSingle:
         return str(self.predictions)
 
     def dump_to_json(self, path: str = './ids.json') -> None:
-        pass
+        with open(path, 'w') as f:
+            json.dump(self.predictions, f)
